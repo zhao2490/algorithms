@@ -1,6 +1,6 @@
 
-lst1 = list(range(5000))
-lst2 = list(range(5000))
+lst1 = list(range(100))
+lst2 = list(range(100))
 lst = lst1 + lst2
 
 def merge_sort(lst, low, mid, high):
@@ -21,6 +21,7 @@ def merge_sort(lst, low, mid, high):
     while j <= high:
         li_temp.append(lst[j])
         j += 1
+    lst[low:high+1] = li_temp
 
-merge_sort(lst, 0, 4999, len(lst)-1)
+merge_sort(lst, 0, len(lst)//2, len(lst)-1)
 print(lst)
