@@ -16,12 +16,12 @@ func QuickSort(arr []int) {
 }
 
 func separateSort(arr []int, start, end int) {
-	if start <= end {
+	if start >= end {
 		return
 	}
 	i := partition(arr, start, end)
 	separateSort(arr, start, i-1)
-	separateSort(arr, i, end)
+	separateSort(arr, i+1, end)
 }
 
 func partition(arr []int, start, end int) int {

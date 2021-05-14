@@ -20,6 +20,6 @@ func InsertSort(a []int, n int) {
 				break
 			}
 		}
-		a[j] = val
+		a[j+1] = val
 	}
 }
