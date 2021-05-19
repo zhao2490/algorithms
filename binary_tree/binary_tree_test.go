@@ -68,6 +68,7 @@ func Test_preOrderTraversal(t *testing.T) {
 		root := PreIn2Tree(tc.pre, tc.in)
 		res := make([]int, 0)
 		assert.Equal(t, tc.pre, preOrderTraversal(root, res))
+		assert.Equal(t, tc.pre, preOrderTraversal2(root))
 	}
 }
 
@@ -79,6 +80,7 @@ func Test_inOrderTraversal(t *testing.T) {
 		root := PreIn2Tree(tc.pre, tc.in)
 		res := make([]int, 0)
 		assert.Equal(t, tc.in, inOrderTraversal(root, res))
+		assert.Equal(t, tc.in, inOrderTraversal2(root))
 	}
 }
 
@@ -90,5 +92,6 @@ func Test_postOrderTraversal(t *testing.T) {
 		root := PreIn2Tree(tc.pre, tc.in)
 		res := make([]int, 0)
 		assert.Equal(t, tc.post, postOrderTraversal(root, res))
+		assert.Equal(t, tc.post, postOrderTraversal2(root))
 	}
 }
