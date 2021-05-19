@@ -1,5 +1,7 @@
 package binary_tree
 
+import "fmt"
+
 type Node struct {
 	Data  interface{}
 	Left  *Node
@@ -64,7 +66,7 @@ func (t *BinarySearchTree) Insert(v interface{}) bool {
 	return true
 }
 
-func (t *BinarySearchTree) Deleted(v interface{}) bool {
+func (t *BinarySearchTree) Delete(v interface{}) bool {
 	var pp *Node = nil // 记录需要删除节点的父节点
 	p := t.root
 	deleteLeft := false
@@ -155,4 +157,23 @@ func (t *BinarySearchTree) Max() *Node {
 		p = p.Right
 	}
 	return p
+}
+
+func (t *BinarySearchTree) InOrderTraversal() {
+	var stack []*Node
+	var res []interface{}
+	p := t.root
+	for p != nil || len(stack) > 0 {
+		for p != nil {
+			stack = append(stack, p)
+			p = p.Left
+		}
+		if len(stack) > 0 {
+			p = stack[len(stack)-1]
+			res = append(res, p.Data)
+			stack = stack[:len(stack)-1]
+			p = p.Right
+		}
+	}
+	fmt.Println(res)
 }
