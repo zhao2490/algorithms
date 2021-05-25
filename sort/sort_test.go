@@ -39,3 +39,9 @@ func TestBucketSort(t *testing.T) {
 	BucketSort(array)
 	t.Log(array)
 }
+
+func TestHeapSort(t *testing.T) {
+	array := []int{0, 2, 5, 7, 3, 1, 2}
+	HeapSort(array, len(array)-1)
+	t.Log(array[1:])
+}
